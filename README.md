@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎫 EventPass — Plataforma de Gestión de Eventos y Boletos
 
-## Getting Started
+**EventPass** es una plataforma integral para la publicación, venta, emisión y control de acceso de boletos con códigos QR dinámicos, validación de pagos bancarios y escáner móvil para staff.
 
-First, run the development server:
+---
 
+## 🚀 Inicio Rápido
+
+### 1. Requisitos
+- Node.js 18+ instalado
+- npm / yarn / pnpm
+
+### 2. Instalación y Ejecución Local
 ```bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔑 Accesos, Roles y Credenciales
 
-## Learn More
+Para consultar la guía detallada de rutas y credenciales de acceso, revisa el archivo dedicado:  
+👉 **[Guía Completa de Accesos (ACCESOS.md)](./ACCESOS.md)**
 
-To learn more about Next.js, take a look at the following resources:
+### Resumen de Rutas Principales:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Panel | Ruta | Credenciales Predeterminadas |
+| :--- | :--- | :--- |
+| **👑 Super Admin** | [`/super`](http://localhost:3000/super) | **Usuario:** `Admin123`<br>**Contraseña:** `Mimamame21` |
+| **🎪 Organizador** | [`/admin`](http://localhost:3000/admin) | **Celular:** *(10 dígitos del registro)*<br>**Contraseña:** *(Asignada por Super Admin)* |
+| **📱 Staff Puerta** | [`/staff`](http://localhost:3000/staff) | PIN del evento configurado por el Organizador |
+| **🎟️ Cartelera** | [`/`](http://localhost:3000/) | Acceso Público |
+| **📥 Mis Boletos** | [`/mis-boletos`](http://localhost:3000/mis-boletos) | Consulta con Celular o Correo |
+| **📝 Registro Productor** | [`/solicitar-organizador`](http://localhost:3000/solicitar-organizador) | Formulario de Solicitud |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Tecnologías Utilizadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Frontend & Backend:** Next.js (App Router, React, TypeScript)
+- **Estilos:** Tailwind CSS con componentes Lucide Icons
+- **Base de Datos & Almacenamiento:** SQLite local (`better-sqlite3`) y soporte para Firebase Firestore
+- **Lector de Códigos QR:** `html5-qrcode` para escaneo por cámara móvil en PWA
+- **Notificaciones y Correo:** Nodemailer (SMTP / Gmail) y enlaces directos de WhatsApp Web (`wa.me`)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📦 Despliegue y Producción
+
+Para compilar y empaquetar la aplicación para producción:
+
+```bash
+npm run build
+npm run start
+```
