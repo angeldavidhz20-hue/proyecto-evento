@@ -59,10 +59,10 @@ export default function SolicitarOrganizadorPage() {
             </p>
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-3">
               <Link
-                href="/super"
+                href="/"
                 className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold text-xs px-6 py-3 rounded-2xl shadow-md shadow-purple-200 transition-all inline-flex items-center justify-center gap-2"
               >
-                Abrir Panel Super Admin para Aprobar Solicitud &rarr;
+                Volver a la Cartelera de Eventos &rarr;
               </Link>
             </div>
           </div>
